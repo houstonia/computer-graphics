@@ -11,7 +11,7 @@ function getNewMatrix(part) {
   }
   return newM;
 }
-function MultiplyMatrix(A, B) {
+function multiplyMatrix(A, B) {
   var rowsA = A.length,
     rowsB = B.length,
     colsB = B[0].length;
@@ -73,9 +73,9 @@ let f = 0.01;
 document.addEventListener("keydown", function (event) {
   switch (event.key) {
     case "+":
-      Scale(mCat1, k + 0.2);
-      Scale(mCat2, k + 0.2);
-      Scale(mSoed, k + 0.2);
+      scale(mCat1, k + 0.2);
+      scale(mCat2, k + 0.2);
+      scale(mSoed, k + 0.2);
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < catMatrix.length; i++) {
@@ -83,9 +83,9 @@ document.addEventListener("keydown", function (event) {
       }
       break;
     case "-":
-      Scale(mCat1, k - 0.2);
-      Scale(mCat2, k - 0.2);
-      Scale(mSoed, k - 0.2);
+      scale(mCat1, k - 0.2);
+      scale(mCat2, k - 0.2);
+      scale(mSoed, k - 0.2);
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < catMatrix.length; i++) {
@@ -93,9 +93,9 @@ document.addEventListener("keydown", function (event) {
       }
       break;
     case "ArrowLeft":
-      MultiplyMatrix(mCat1, B);
-      MultiplyMatrix(mCat2, B);
-      MultiplyMatrix(mSoed, B);
+      multiplyMatrix(mCat1, B);
+      multiplyMatrix(mCat2, B);
+      multiplyMatrix(mSoed, B);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < catMatrix.length; i++) {
         myCat.draw(catMatrix[i]);
@@ -103,9 +103,9 @@ document.addEventListener("keydown", function (event) {
 
       break;
     case "ArrowRight":
-      MultiplyMatrix(mCat1, A);
-      MultiplyMatrix(mCat2, A);
-      MultiplyMatrix(mSoed, A);
+      multiplyMatrix(mCat1, A);
+      multiplyMatrix(mCat2, A);
+      multiplyMatrix(mSoed, A);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < catMatrix.length; i++) {
         myCat.draw(catMatrix[i]);
@@ -113,18 +113,18 @@ document.addEventListener("keydown", function (event) {
 
       break;
     case "ArrowUp":
-      MultiplyMatrix(mCat1, C);
-      MultiplyMatrix(mCat2, C);
-      MultiplyMatrix(mSoed, C);
+      multiplyMatrix(mCat1, C);
+      multiplyMatrix(mCat2, C);
+      multiplyMatrix(mSoed, C);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < catMatrix.length; i++) {
         myCat.draw(catMatrix[i]);
       }
       break;
     case "ArrowDown":
-      MultiplyMatrix(mCat1, D);
-      MultiplyMatrix(mCat2, D);
-      MultiplyMatrix(mSoed, D);
+      multiplyMatrix(mCat1, D);
+      multiplyMatrix(mCat2, D);
+      multiplyMatrix(mSoed, D);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < catMatrix.length; i++) {
         myCat.draw(catMatrix[i]);
@@ -132,27 +132,27 @@ document.addEventListener("keydown", function (event) {
 
       break;
     case "z":
-      RotateObj(mCat1, mtxRotateZ);
-      RotateObj(mCat2, mtxRotateZ);
-      RotateObj(mSoed, mtxRotateZ);
+      rotateObj(mCat1, mtxRotateZ);
+      rotateObj(mCat2, mtxRotateZ);
+      rotateObj(mSoed, mtxRotateZ);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < catMatrix.length; i++) {
         myCat.draw(catMatrix[i]);
       }
       break;
     case "y":
-      RotateObj(mCat1, mtxRotateY);
-      RotateObj(mCat2, mtxRotateY);
-      RotateObj(mSoed, mtxRotateY);
+      rotateObj(mCat1, mtxRotateY);
+      rotateObj(mCat2, mtxRotateY);
+      rotateObj(mSoed, mtxRotateY);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < catMatrix.length; i++) {
         myCat.draw(catMatrix[i]);
       }
       break;
     case "x":
-      RotateObj(mCat1, mtxRotateX);
-      RotateObj(mCat2, mtxRotateX);
-      RotateObj(mSoed, mtxRotateX);
+      rotateObj(mCat1, mtxRotateX);
+      rotateObj(mCat2, mtxRotateX);
+      rotateObj(mSoed, mtxRotateX);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < catMatrix.length; i++) {
         myCat.draw(catMatrix[i]);
@@ -180,7 +180,7 @@ let mtxRotateX = [
   [0, 0, 0, 1],
 ];
 
-function RotateObj(A, mtxRotate) {
+function rotateObj(A, mtxRotate) {
   var rowsA = A.length,
     rowsB = mtxRotate.length,
     colsB = mtxRotate[0].length;
@@ -195,22 +195,12 @@ function RotateObj(A, mtxRotate) {
   return A;
 }
 
-function Scale(A, k) {
+function scale(A, k) {
   let scaleMatrix = [
     [k, 0, 0, 0],
     [0, k, 0, 0],
     [0, 0, k, 0],
     [0, 0, 0, 1],
   ];
-  MultiplyMatrix(A, scaleMatrix);
-}
-
-function MoveObj(mtx, x, y) {
-  let mtxMove = [
-    [1, 0, 0, 0],
-    [0, 1, 0, 0],
-    [0, 0, 1, 0],
-    [x, y, 0, 1],
-  ];
-  MultiplyMatrix(mtx, mtxMove);
+  multiplyMatrix(A, scaleMatrix);
 }
