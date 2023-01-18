@@ -1,0 +1,17 @@
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\fractals.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\fractals.Form1.resources
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\fractals.csproj.GenerateResource.cache
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\fractals.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\fractals.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\fractals.AssemblyInfo.cs
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\fractals.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\fractals\fractals\bin\Debug\net6.0-windows\fractals.exe
+C:\Users\admin\source\repos\fractals\fractals\bin\Debug\net6.0-windows\fractals.deps.json
+C:\Users\admin\source\repos\fractals\fractals\bin\Debug\net6.0-windows\fractals.runtimeconfig.json
+C:\Users\admin\source\repos\fractals\fractals\bin\Debug\net6.0-windows\fractals.dll
+C:\Users\admin\source\repos\fractals\fractals\bin\Debug\net6.0-windows\fractals.pdb
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\fractals.dll
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\refint\fractals.dll
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\fractals.pdb
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\fractals.genruntimeconfig.cache
+C:\Users\admin\source\repos\fractals\fractals\obj\Debug\net6.0-windows\ref\fractals.dll
